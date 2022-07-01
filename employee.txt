@@ -1,0 +1,19 @@
+#!/bin/bash
+echo enter basic salary
+read sal
+if [ $sal -le 1500 ]
+then
+        hra=$(echo "0.1*$sal"|bc)
+        echo "The hra is : $hra"
+        da=$(echo "0.9*$sal"|bc)
+        echo "The da is : $da"
+        gsal=$(echo "$hra+$da+$sal"|bc)
+        echo "The gross salary : $gsal"
+else
+        hra=$(echo "500"|bc)
+        echo "The hra is : $hra"
+        da=$(echo "0.98*$sal"|bc)
+        echo "The da is : $da"
+        gsal=$(echo "$hra+$da+$sal"|bc)
+        echo "The gross salary : $gsal"
+fi

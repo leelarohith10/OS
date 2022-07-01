@@ -1,0 +1,26 @@
+#!/bin/bash
+echo "Enter student name :"
+read name
+echo "Enter English Marks :"
+read eng
+echo "Enter Maths Marks :"
+read mat
+echo "Enter Social Marks :"
+read soc
+echo "Enter Science Marks :"
+read sci
+echo "Enter Language Marks :"
+read lang
+sum=$((eng+mat+soc+sci+lang))
+avg=$(echo "$sum/5" | bc)
+if [ $avg -ge 90 ]; then
+        echo "$name got A grade"
+elif [ $avg -ge 80 ]; then
+        echo "$name got B grade"
+elif [ $avg -ge 70 ]; then
+        echo "$name got C grade"
+elif [ $avg -ge 60 ]; then
+        echo "$name got D grade"
+else
+        echo "$name failed in exam"
+fi
